@@ -6,7 +6,7 @@ const index = () => {
   const { signOut } = useClerk();
   return (
     <View className=' flex flex-col'>
-      <Text>Home Screen</Text>
+      <Text>Home</Text>
       <Button title='Log Out' onPress={() => signOut}></Button>
     </View>
   );
