@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import validator from "validator";
 
 const postSchema = new mongoose.Schema(
   {
@@ -11,20 +10,10 @@ const postSchema = new mongoose.Schema(
     content: {
       type: String,
       maxLength: 280,
-      require: true,
     },
     image: {
       type: String,
       default: "",
-      validate: {
-        validator: function (v) {
-          return (
-            validator.isURL(v) &&
-            /\.(jpg|jpeg|png|gif|webp)$/i.test(v)
-          );
-        },
-        message: "Picture must be valid URL",
-      },
     },
     likes: [
       {
